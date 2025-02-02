@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Your Crush</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8d7da;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+         #gif {
+            display: none; /* Initially hide the GIF */
+            width: 300px; /* Set the width of the GIF */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Can I take you out on February 14?</h1>
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+        <img id="gif" src="https://media.tenor.com/DpJdyKQKgYkAAAAi/cat-jump.gif" alt="Celebration GIF"> 
+    </div>
+    <script>
+        document.getElementById("yesButton").addEventListener("click", function() {
+            // Show the GIF
+            document.getElementById("gif").style.display = "block";
+            alert("Eksena!?? See you, Irish");
+        });
+
+        document.getElementById("noButton").addEventListener("click", function() {
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            this.style.position = 'absolute';
+            this.style.left = randomX + 'px';
+            this.style.top = randomY + 'px';
+        });
+    </script>
+</body>
+</html>
